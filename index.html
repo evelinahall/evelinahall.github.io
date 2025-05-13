@@ -1,1 +1,387 @@
-Hello World
+<!DOCTYPE html>
+<html class="js" lang="sv">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="">
+  <title>
+    Evelina Häll - Konst
+  </title>
+
+  <meta property="og:site_name" content="Evelina Häll">
+  <meta property="og:title" content="Evelina Häll">
+  <meta property="og:type" content="website">
+  <meta property="og:description" content="Evelina Häll">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Evelina Häll">
+  <meta name="twitter:description" content="Evelina Häll">
+
+  <script src="/js/global.js" defer="defer"></script>
+  <script src="/js/animations.js" defer="defer"></script>
+  <script id="sections-script" data-sections="header" defer="defer" src="/js/scripts.js"></script>
+
+  <link href="/css/base.css" rel="stylesheet" type="text/css" media="all">
+  <link rel="preload" as="font"
+    href="/fonts/quattrocentosans_n4.b43a78e6b8b9780ef5893d83cd043417f12e0d99.woff2?h1=MWYyNWQyLTIuYWNjb3VudC5teXNob3BpZnkuY29t&amp;h2=dXR0cnlja3NmdWxsLnNl&amp;hmac=2748fd60f9d4f2d62257bc620135944a08c9ce95fd64ada806bfe4cdf8fee861"
+    type="font/woff2" crossorigin="">
+  <link rel="preload" as="font"
+    href="/fonts/americana_n4.e48f0c04dfcd15cf0297d6a79006cabda02b0d13.woff2?h1=MWYyNWQyLTIuYWNjb3VudC5teXNob3BpZnkuY29t&amp;h2=dXR0cnlja3NmdWxsLnNl&amp;hmac=c732767508b628dd01e4d923651f7959017485140b8fc76e3a7739ef88f829c5"
+    type="font/woff2" crossorigin="">
+</head>
+
+<body id="evelinahall" class="gradient" onload="init()">
+
+  <!-- BEGIN sections: header-group -->
+  <div id="section-sections--19417874596171__announcement-bar"
+    class="section section-group-header-group announcement-bar-section">
+
+    <link href="/css/component-list-social.css" rel="stylesheet" type="text/css" media="all">
+
+
+    <div class="utility-bar color-accent-1 gradient">
+      <div class="page-width utility-bar__grid">
+        <div class="localization-wrapper">
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+  <div id="section-sections--19417874596171__header"
+    class="section section-group-header-group section-header">
+    <link rel="stylesheet" href="/css/component-list-menu.css" media="all" onload="this.media=&#39;all&#39;">
+    <link rel="stylesheet" href="/css/component-menu-drawer.css" media="all" onload="this.media=&#39;all&#39;">
+
+    <svg xmlns="http://www.w3.org/2000/svg" class="hidden">
+      <symbol id="icon-search" viewBox="0 0 18 19" fill="none">
+        <path fill-rule="evenodd" clip-rule="evenodd"
+          d="M11.03 11.68A5.784 5.784 0 112.85 3.5a5.784 5.784 0 018.18 8.18zm.26 1.12a6.78 6.78 0 11.72-.7l5.4 5.4a.5.5 0 11-.71.7l-5.41-5.4z"
+          fill="currentColor"></path>
+      </symbol>
+
+      <symbol id="icon-reset" class="icon icon-close" fill="none" viewBox="0 0 18 18" stroke="currentColor">
+        <circle r="8.5" cy="9" cx="9" stroke-opacity="0.2"></circle>
+        <path d="M6.82972 6.82915L1.17193 1.17097" stroke-linecap="round" stroke-linejoin="round"
+          transform="translate(5 5)"></path>
+        <path d="M1.22896 6.88502L6.77288 1.11523" stroke-linecap="round" stroke-linejoin="round"
+          transform="translate(5 5)"></path>
+      </symbol>
+
+      <symbol id="icon-close" class="icon icon-close" fill="none" viewBox="0 0 18 17">
+        <path
+          d="M.865 15.978a.5.5 0 00.707.707l7.433-7.431 7.579 7.282a.501.501 0 00.846-.37.5.5 0 00-.153-.351L9.712 8.546l7.417-7.416a.5.5 0 10-.707-.708L8.991 7.853 1.413.573a.5.5 0 10-.693.72l7.563 7.268-7.418 7.417z"
+          fill="currentColor">
+        </path>
+      </symbol>
+    </svg>
+    <div class="header-wrapper color-background-1 gradient">
+      <header class="header header--top-center header--mobile-center page-width header--has-menu header--has-social">
+
+        <header-drawer data-breakpoint="tablet">
+          <details id="Details-menu-drawer-container" class="menu-drawer-container">
+            <summary class="header__icon header__icon--menu header__icon--summary link focus-inset" aria-label="Meny"
+              role="button" aria-expanded="false" aria-controls="menu-drawer">
+              <span>
+                <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" class="icon icon-hamburger"
+                  fill="none" viewBox="0 0 18 16">
+                  <path
+                    d="M1 .5a.5.5 0 100 1h15.71a.5.5 0 000-1H1zM.5 8a.5.5 0 01.5-.5h15.71a.5.5 0 010 1H1A.5.5 0 01.5 8zm0 7a.5.5 0 01.5-.5h15.71a.5.5 0 010 1H1a.5.5 0 01-.5-.5z"
+                    fill="currentColor">
+                  </path>
+                </svg>
+
+                <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" class="icon icon-close"
+                  fill="none" viewBox="0 0 18 17">
+                  <path
+                    d="M.865 15.978a.5.5 0 00.707.707l7.433-7.431 7.579 7.282a.501.501 0 00.846-.37.5.5 0 00-.153-.351L9.712 8.546l7.417-7.416a.5.5 0 10-.707-.708L8.991 7.853 1.413.573a.5.5 0 10-.693.72l7.563 7.268-7.418 7.417z"
+                    fill="currentColor">
+                  </path>
+                </svg>
+
+              </span>
+            </summary>
+            <div id="menu-drawer" class="gradient menu-drawer motion-reduce color-background-1">
+              <div class="menu-drawer__inner-container">
+                <div class="menu-drawer__navigation-container">
+                  <nav class="menu-drawer__navigation">
+                    <ul class="menu-drawer__menu has-submenu list-menu" role="list">
+                      <li><a id="HeaderDrawer-konst" href="#konst"
+                        class="menu-drawer__menu-item list-menu__item link link--text focus-inset">
+                        Konst
+                      </a></li>
+                      <li><a id="HeaderDrawer-inredning" href="https://www.uttrycksfull.se"
+                          class="menu-drawer__menu-item list-menu__item link link--text focus-inset menu-drawer__menu-item--active"
+                          aria-current="page">
+                          Inredning &amp; Kreativa miljöer
+                        </a></li>
+                        <!-- <li><a id="HeaderDrawer-galleri" href="#galleri"
+                          class="menu-drawer__menu-item list-menu__item link link--text focus-inset">
+                          Galleri
+                        </a></li> -->
+                        <li><a id="HeaderDrawer-om" href="#om"
+                          class="menu-drawer__menu-item list-menu__item link link--text focus-inset">
+                          Om
+                        </a></li>
+                    </ul>
+                  </nav>
+                  <div class="menu-drawer__utility-links">
+                    <div class="menu-drawer__localization header-localization">
+                    </div>
+                    <ul class="list list-social list-unstyled" role="list">
+                      <li class="list-social__item">
+                        <a href="http://instagram.com/uttrycksfullab" class="list-social__link link"><svg
+                            aria-hidden="true" focusable="false" class="icon icon-instagram" viewBox="0 0 20 20">
+                            <path fill="currentColor" fill-rule="evenodd"
+                              d="M13.23 3.492c-.84-.037-1.096-.046-3.23-.046-2.144 0-2.39.01-3.238.055-.776.027-1.195.164-1.487.273a2.43 2.43 0 0 0-.912.593 2.486 2.486 0 0 0-.602.922c-.11.282-.238.702-.274 1.486-.046.84-.046 1.095-.046 3.23 0 2.134.01 2.39.046 3.229.004.51.097 1.016.274 1.495.145.365.319.639.602.913.282.282.538.456.92.602.474.176.974.268 1.479.273.848.046 1.103.046 3.238.046 2.134 0 2.39-.01 3.23-.046.784-.036 1.203-.164 1.486-.273.374-.146.648-.329.921-.602.283-.283.447-.548.602-.922.177-.476.27-.979.274-1.486.037-.84.046-1.095.046-3.23 0-2.134-.01-2.39-.055-3.229-.027-.784-.164-1.204-.274-1.495a2.43 2.43 0 0 0-.593-.913 2.604 2.604 0 0 0-.92-.602c-.284-.11-.703-.237-1.488-.273ZM6.697 2.05c.857-.036 1.131-.045 3.302-.045 1.1-.014 2.202.001 3.302.045.664.014 1.321.14 1.943.374a3.968 3.968 0 0 1 1.414.922c.41.397.728.88.93 1.414.23.622.354 1.279.365 1.942C18 7.56 18 7.824 18 10.005c0 2.17-.01 2.444-.046 3.292-.036.858-.173 1.442-.374 1.943-.2.53-.474.976-.92 1.423a3.896 3.896 0 0 1-1.415.922c-.51.191-1.095.337-1.943.374-.857.036-1.122.045-3.302.045-2.171 0-2.445-.009-3.302-.055-.849-.027-1.432-.164-1.943-.364a4.152 4.152 0 0 1-1.414-.922 4.128 4.128 0 0 1-.93-1.423c-.183-.51-.329-1.085-.365-1.943C2.009 12.45 2 12.167 2 10.004c0-2.161 0-2.435.055-3.302.027-.848.164-1.432.365-1.942a4.44 4.44 0 0 1 .92-1.414 4.18 4.18 0 0 1 1.415-.93c.51-.183 1.094-.33 1.943-.366Zm.427 4.806a4.105 4.105 0 1 1 5.805 5.805 4.105 4.105 0 0 1-5.805-5.805Zm1.882 5.371a2.668 2.668 0 1 0 2.042-4.93 2.668 2.668 0 0 0-2.042 4.93Zm5.922-5.942a.958.958 0 1 1-1.355-1.355.958.958 0 0 1 1.355 1.355Z"
+                              clip-rule="evenodd"></path>
+                          </svg>
+                          <span class="visually-hidden">Instagram</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </details>
+        </header-drawer>
+
+
+        <h1 class="header__heading"><a href="/" class="header__heading-link link link--text focus-inset">
+            <div class="header__heading-logo-wrapper">
+
+              <img src="/img/logo.svg" alt="Evelina Häll" width="230" height="126.5" loading="eager"
+                class="header__heading-logo motion-reduce" sizes="(max-width: 460px) 50vw, 230px">
+            </div>
+          </a></h1>
+
+        <nav class="header__inline-menu">
+          <ul class="list-menu list-menu--inline" role="list">
+            <li><a id="HeaderMenu-konst" href="#konst"
+              class="header__menu-item list-menu__item link link--text focus-inset">
+              <span>Konst</span>
+            </a></li>
+            <li><a id="HeaderMenu-inredning" href="#inredning" class="header__menu-item list-menu__item link link--text focus-inset"
+                aria-current="page">
+                <span>Inredning &amp; Kreativa miljöer</span>
+              </a></li>
+              <!-- <li><a id="HeaderMenu-galleri" href="#galleri"
+                class="header__menu-item list-menu__item link link--text focus-inset">
+                <span>Galleri</span>
+              </a></li> -->
+            <li><a id="HeaderMenu-om" href="#om"
+                class="header__menu-item list-menu__item link link--text focus-inset">
+                <span>Om</span>
+              </a></li>
+          </ul>
+        </nav>
+
+        <div class="header__icons header__icons--localization header-localization">
+          <div class="desktop-localization-wrapper">
+          </div>
+
+
+        </div>
+      </header>
+    </div>
+
+  </div>
+  <!-- END sections: header-group -->
+  <div id="product_buy" class="product_buy hidden">
+    <div class="product_buy_inner">
+
+      För att reservera tavlan, maila tavlans namn "<span id="product_buy_product_name"></span>" samt ditt namn och postadress till <b><a id="product_buy_email"></a></b><br>
+      Jag kommer inom några dagar att kontakta er för att komma överens om leverans/frakt. Betalning sker vid leverans och görs genom Swish, alternativt banköverföring.
+      <br><br>
+      <span id="product_buy_disclaimer"></span>
+      <br><br>
+      <button id="close_buy_button">Stäng</button>
+    </div>
+  </div>
+  <div id="image_show" class="image_show hidden">
+    <div class="image_show_outer">
+      <button id="image_show_close">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" class="icon icon-close" fill="none" viewBox="0 0 18 17">
+          <path d="M.865 15.978a.5.5 0 00.707.707l7.433-7.431 7.579 7.282a.501.501 0 00.846-.37.5.5 0 00-.153-.351L9.712 8.546l7.417-7.416a.5.5 0 10-.707-.708L8.991 7.853 1.413.573a.5.5 0 10-.693.72l7.563 7.268-7.418 7.417z" fill="currentColor">
+          </path>
+        </svg>
+      </button>
+      <div class="image_show_inner">
+        <img id="image_show_el">
+      </div>
+    </div>
+  </div>
+
+  <div id="product_show" class="product_show hidden page-width">
+    <div>
+      <img id="mainImage">
+      <div class="product_extra_images">
+        <img id="img2">
+        <img id="img3">  
+        <img id="img4">  
+        <img id="img5">  
+        <img id="img6">  
+      </div>
+    </div>
+    <div>
+      <h1 id="productTitle"></h1>
+      <div id="artText" style="font-style: italic; margin-bottom: 16px;"></div>
+      <div id="price" style="font-size: larger;"></div>
+      <div id="description"></div>
+      <button id="buy_button">Kontakta för intresse</button>
+      <div id="disclaimer" style="font-style: italic; font-size: x-small; margin-top: 64px;;"></div>
+    </div>
+  </div>
+
+  <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
+    <section id="section-template--19417874202955__main" class="section section">
+      <link href="/css/section-main-page.css" rel="stylesheet"
+        type="text/css" media="all">
+      <div class="page-width section-template--19417874202955__main-padding">
+        <a id="konst"></a>
+        <h1 class="main-page-title page-title h0 scroll-trigger animate--fade-in">
+          Konst av Evelina Häll
+        </h1>
+        <div style="padding: 0px 16px 0px">
+          <p style="text-align: left;">
+            <img src="/img/evelina_small.jpg" alt="" width="153" style="float: right; padding: 12px;" class="norounding">
+            Min egen konst som letar efter miljöer och hem att få förgylla. Konsten är för mig ett sätt att ge uttryck för känslor och tankar och det fina är att en tavla eller ett konstverk kan betyda något helt annat för dig än för mig. Därför är just konst ett utmärkt sätt att omge sig av hemma eller i den miljön man befinner sig i. Målar främst i akryl och med mycket känslor. Konsten säljs av mig som privatperson/konstnär.
+          </p>
+          <!--p style="text-align: left;">Många av mina tavlor finns nu för visning och försäljning i butiken <a href="https://norrgavel.se/information/kundservice/butiker">Norrgavel</a> i Lammhult.</p-->
+        </div>
+
+        <div>
+          <div id="product_list" class="product_list">
+            <!-- lägg till här -->
+            <div name="overvaldigad" title="Överväldigad" images="2" price="9 000" description="Akryl- och oljepastellmålning i mått 83x102 cm inklusive vit träram" class="scroll-trigger animate--fade-in"></div>
+            <div name="rundochkantig" title="Rund och kantig" images="2" price="9 000" description="Akrylmålning i mått 82x102 cm inklusive vit träram" class="scroll-trigger animate--fade-in"></div>
+            <div name="stegvis" title="Stegvis" images="2" price="9 000" description="Akrylmålning i mått 82x102 cm inklusive vit träram" class="scroll-trigger animate--fade-in"></div>
+            <div name="paronsplit" title="Päronsplit" images="2" price="9 000" description="Akrylmålning i mått 82x102 cm inklusive vit träram" class="scroll-trigger animate--fade-in"></div>
+            <div name="karnfull" title="Kärnfull" images="2" price="9 000" description="Akrylmålning i mått 102x82 cm inklusive vit träram" class="scroll-trigger animate--fade-in"></div>
+            <div name="naralltarmojligt" title="När allt är möjligt" images="2" price="10 000" description="Akrylmålning i mått 102x102 cm inklusive vit träram" class="scroll-trigger animate--fade-in"></div>
+            
+            <div name="leavingitbehind2" title="Leaving it behind" images="2" price="10 000" description="Akrylmålning i mått 102x102 cm inklusive vit träram" class="scroll-trigger animate--fade-in"></div>
+            <div name="ullstrumpor" title="Ullstrumpor" images="3" price="8 000" description="Akrylmålning i mått 102x82 cm inklusive vit träram" class="scroll-trigger animate--fade-in"></div>
+            <div name="puls" title="PULS" images="2" price="10 000" description="Akrylmålning i mått 102x102 cm inklusive vit träram" class="scroll-trigger animate--fade-in"></div>
+            <div name="stravan" title="Strävan" images="2" price="9000" arttext="Tunga stenar att bära, stenar vi alla bär på. Vila.<br/>Lägg ner dom och låt dom vara stöd och ge liv åt det nya." description="Akrylmålning i mått 82x102 cm inklusive vit träram" class="scroll-trigger animate--fade-in"></div>
+
+            <div name="tvasidoravmig" title="Två sidor av mig" images="2" price="7000" description="Akryl- och oljepastellmålning i mått 102x82 cm inkl ram. Pris inkl träram." class="scroll-trigger animate--fade-in"></div>
+
+            <div name="spelregler" title="Spelregler" images="3" price="8000" description="Akryl- och oljepastellmålning i mått 100x80 cm exkl ram. Pris inkl träram." class="scroll-trigger animate--fade-in"></div>
+            <div name="uppsyn" title="Uppsyn" images="3" price="7000" description="Akrylmålning i mått 102x82 cm inklusive vit träram" class="scroll-trigger animate--fade-in"></div>
+            <div name="foraldraskap" title="Föräldraskap - Såld" images="3" sold="true" price="8000" description="Akryl- och oljepastellmålning i mått 102x102 cm inklusive vit träram" class="scroll-trigger animate--fade-in"></div>
+
+            <div name="modigtskor" title="Modigt skör - Såld" images="1" sold="true" price="5800" description="Akrylmålning i mått 82x82 cm inklusive vit träram" class="scroll-trigger animate--fade-in"></div>
+            
+            <div name="vaxupp" title="Väx upp - Såld" sold="true" images="2" price="2500" description="Akrylmålning i mått 52x52 cm inklusive vit träram" class="scroll-trigger animate--fade-in"></div>
+            <div name="odmjuk" title="Ödmjuk - Såld" sold="true" images="2" price="7000" description="Akrylmålning i mått 82x102 cm inklusive vit träram" class="scroll-trigger animate--fade-in"></div>
+
+            <div name="distans" title="Distans - Såld" images="3" price="2500" sold="true" description="Akrylmålning i mått 72x52 cm inklusive vit träram" class="scroll-trigger animate--fade-in"></div>
+            <div name="minandrahalft" title="Min andra hälft - Såld" sold="true" images="3" price="8000" description="Akryl- och oljepastellmålning i mått 102x102 cm inklusive vit träram" class="scroll-trigger animate--fade-in"></div>
+
+            <div name="jordnara" title="Jordnära" images="3" price="8000" description="Akrylmålning i mått 102x102 cm inklusive vit träram" class="scroll-trigger animate--fade-in"></div>
+            <div name="andrum2" title="Andrum 2" images="3" price="8000" description="Akryl- och oljepastellmålning i mått 102x102 cm inklusive vit träram" class="scroll-trigger animate--fade-in"></div>
+            <div name="socialbaksmalla" title="Social baksmälla - såld" images="2" price="8000" sold="true" description="Akryl- och oljepastellmålning i mått 102x102 cm inklusive vit träram" class="scroll-trigger animate--fade-in"></div>
+
+            <div name="andrum" title="Andrum" images="3" price="8000" description="Akrylmålning i mått 102x102 cm inklusive vit träram" class="scroll-trigger animate--fade-in"></div>
+            <div name="kantigvarld" title="Kantig värld" images="3" price="10000" description="Akrylmålning i mått 102x102 cm inklusive betsad träram" class="scroll-trigger animate--fade-in"></div>
+            <div name="balansgang" title="Balansgång" images="3" price="2800" description="Akrylmålning i mått 52x72 cm inklusive betsad träram" class="scroll-trigger animate--fade-in"></div>
+            <div name="upprepning" title="Upprepning" images="3" price="2800" description="Akrylmålning i mått 52x72 cm inklusive betsad träram" class="scroll-trigger animate--fade-in"></div>
+            <div name="volpe" title="Volpe" images="3" price="4800" description="Akryl- och oljepastellmålning i mått 52x72 cm inklusive betsad träram" class="scroll-trigger animate--fade-in"></div>
+          </div>
+        </div>
+      </div>
+      <div class="page-width page-width--narrow section-template--19417874202955__main-padding">
+      </div>
+
+    </section>
+  </main>
+
+  <!-- BEGIN sections: footer-group -->
+  <section id="section-sections--19417874563403__newsletter"
+    class="section section-group-footer-group section">
+    <link href="/css/newsletter-section.css" rel="stylesheet" type="text/css" media="all">
+    <div class="newsletter center ">
+      <div
+        class="newsletter__wrapper color-accent-1 gradient content-container isolate content-container--full-width section-sections--19417874563403__newsletter-padding">
+        <h2 class="inline-richtext h1 scroll-trigger animate--slide-in" data-cascade="" style="--animation-order: 1;">
+          Kontaktuppgifter
+        </h2>
+      </div>
+    </div>
+
+
+  </section>
+  <div id="section-sections--19417874563403__footer" class="section section-group-footer-group">
+    <link href="/css/section-footer.css" rel="stylesheet" type="text/css" media="all">
+    <link href="/css/component-list-menu.css" rel="stylesheet" type="text/css" media="all">
+    <link href="/css/component-list-social.css" rel="stylesheet" type="text/css" media="all">
+    <footer class="footer color-accent-1 gradient section-sections--19417874563403__footer-padding">
+      <div class="footer__content-top page-width">
+        <div
+          class="footer__blocks-wrapper grid grid--1-col grid--2-col grid--4-col-tablet scroll-trigger animate--slide-in"
+          data-cascade="" style="--animation-order: 0;">
+          <div class="footer-block grid__item scroll-trigger animate--slide-in" data-cascade=""
+            style="--animation-order: 1;">
+            <div class="footer-block__details-content footer-block-image center">
+              <div class="footer-block__image-wrapper" style="max-width: min(100%, 210px);">
+                <a href="" id="info-link">
+                  <img src="/img/info.png" alt="" loading="lazy" width="310" height="108">
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-block--newsletter scroll-trigger animate--slide-in" data-cascade=""
+          style="--animation-order: 0;">
+
+          <ul class="list-unstyled list-social footer__list-social" role="list">
+            <li class="list-social__item">
+              <a href="http://instagram.com/uttrycksfullab" class="link list-social__link"><svg aria-hidden="true"
+                  focusable="false" class="icon icon-instagram" viewBox="0 0 20 20">
+                  <path fill="currentColor" fill-rule="evenodd"
+                    d="M13.23 3.492c-.84-.037-1.096-.046-3.23-.046-2.144 0-2.39.01-3.238.055-.776.027-1.195.164-1.487.273a2.43 2.43 0 0 0-.912.593 2.486 2.486 0 0 0-.602.922c-.11.282-.238.702-.274 1.486-.046.84-.046 1.095-.046 3.23 0 2.134.01 2.39.046 3.229.004.51.097 1.016.274 1.495.145.365.319.639.602.913.282.282.538.456.92.602.474.176.974.268 1.479.273.848.046 1.103.046 3.238.046 2.134 0 2.39-.01 3.23-.046.784-.036 1.203-.164 1.486-.273.374-.146.648-.329.921-.602.283-.283.447-.548.602-.922.177-.476.27-.979.274-1.486.037-.84.046-1.095.046-3.23 0-2.134-.01-2.39-.055-3.229-.027-.784-.164-1.204-.274-1.495a2.43 2.43 0 0 0-.593-.913 2.604 2.604 0 0 0-.92-.602c-.284-.11-.703-.237-1.488-.273ZM6.697 2.05c.857-.036 1.131-.045 3.302-.045 1.1-.014 2.202.001 3.302.045.664.014 1.321.14 1.943.374a3.968 3.968 0 0 1 1.414.922c.41.397.728.88.93 1.414.23.622.354 1.279.365 1.942C18 7.56 18 7.824 18 10.005c0 2.17-.01 2.444-.046 3.292-.036.858-.173 1.442-.374 1.943-.2.53-.474.976-.92 1.423a3.896 3.896 0 0 1-1.415.922c-.51.191-1.095.337-1.943.374-.857.036-1.122.045-3.302.045-2.171 0-2.445-.009-3.302-.055-.849-.027-1.432-.164-1.943-.364a4.152 4.152 0 0 1-1.414-.922 4.128 4.128 0 0 1-.93-1.423c-.183-.51-.329-1.085-.365-1.943C2.009 12.45 2 12.167 2 10.004c0-2.161 0-2.435.055-3.302.027-.848.164-1.432.365-1.942a4.44 4.44 0 0 1 .92-1.414 4.18 4.18 0 0 1 1.415-.93c.51-.183 1.094-.33 1.943-.366Zm.427 4.806a4.105 4.105 0 1 1 5.805 5.805 4.105 4.105 0 0 1-5.805-5.805Zm1.882 5.371a2.668 2.668 0 1 0 2.042-4.93 2.668 2.668 0 0 0-2.042 4.93Zm5.922-5.942a.958.958 0 1 1-1.355-1.355.958.958 0 0 1 1.355 1.355Z"
+                    clip-rule="evenodd"></path>
+                </svg>
+                <span class="visually-hidden">Instagram</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__content-bottom scroll-trigger animate--slide-in" data-cascade=""
+        style="--animation-order: 0;">
+        <div class="footer__content-bottom-wrapper page-width">
+          <div class="footer__column footer__localization isolate"></div>
+          <div class="footer__column footer__column--info"></div>
+        </div>
+        <div class="footer__content-bottom-wrapper page-width footer__content-bottom-wrapper--center">
+          <div class="footer__copyright caption">
+            <small class="copyright__content">© 2025, <a href="/" title="">Evelina Häll</a></small>
+            <small class="copyright__content"> </small>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+  </div>
+  <!-- END sections: footer-group -->
+
+  <ul hidden="">
+    <li id="a11y-refresh-page-message">När du gör ett urval uppdateras sidan.</li>
+    <li id="a11y-new-window-message">Öppnas i ett nytt fönster.</li>
+  </ul>
+  <script>
+    window.addEventListener('load', ()=>{
+      const adr = ['.com','ail', 'gm', '@','ab','evelina.hall'].reverse().join('');
+      document.getElementById('info-link').href='mailto:'+adr;
+    });
+  </script>
+
+</body>
+
+</html>
