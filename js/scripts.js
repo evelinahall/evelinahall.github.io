@@ -15,6 +15,9 @@ const init = () => {
   const img4 = document.getElementById("img4");
   const img5 = document.getElementById("img5");
   const img6 = document.getElementById("img6");
+  const img7 = document.getElementById("img7");
+  const img8 = document.getElementById("img8");
+  const img9 = document.getElementById("img9");
   const price = document.getElementById("price");
   const description = document.getElementById("description");
   const disclaimer = document.getElementById("disclaimer");
@@ -26,6 +29,7 @@ const init = () => {
   const closeBuyButton = document.getElementById("close_buy_button");
   const buyProductName = document.getElementById("product_buy_product_name");
   const buyProductEmail = document.getElementById("product_buy_email");
+  const imageElements = [mainImage, img2, img3, img4, img5, img6, img7, img8, img9];
 
   const productById = {};
 
@@ -73,7 +77,6 @@ const init = () => {
     const parts = (window.location.hash || '#').substring(1).split('-').filter(p=>p);
 
     document.body.classList.remove('overflow-hidden');
-    const imageElements = [mainImage, img2, img3, img4, img5, img6];
 
     if (parts.length >= 1 && productById[parts[0]]) {
       hide(page);
@@ -88,13 +91,10 @@ const init = () => {
       const isSold = attr.sold === 'true';
 
       productTitle.innerText = title;
-      setSrc(imageElements[0], images >= 1 ? '/img/'+name+'/1_small.jpg' : '');
-      setSrc(imageElements[1], images >= 2 ? '/img/'+name+'/2_small.jpg' : '');
-      setSrc(imageElements[2], images >= 3 ? '/img/'+name+'/3_small.jpg' : '');
-      setSrc(imageElements[3], images >= 4 ? '/img/'+name+'/4_small.jpg' : '');
-      setSrc(imageElements[4], images >= 5 ? '/img/'+name+'/5_small.jpg' : '');
-      setSrc(imageElements[5], images >= 6 ? '/img/'+name+'/6_small.jpg' : '');
-      price.innerText = attr.price + ' kr';
+      for (let i = 0; i < 9; i++) {
+        setSrc(imageElements[i], images >= (i+1) ? '/img/'+name+'/'+(i+1)+'_small.jpg' : '');
+      }
+      price.innerText = attr.price + (attr.price.endsWith('kr/st') ? '' : ' kr');
       artText.innerHTML = attr.arttext || '';
       description.innerText = attr.description;
       disclaimer.innerText = DISCLAIMER;
@@ -204,11 +204,9 @@ const init = () => {
   };
 
   mainImage.onclick = showImage(1);
-  img2.onclick = showImage(2);
-  img3.onclick = showImage(3);
-  img4.onclick = showImage(4);
-  img5.onclick = showImage(5);
-  img6.onclick = showImage(6);
+  for (let i = 1; i < imageElements.length; i++) {
+    imageElements[i].onclick = showImage(i+1);
+  }
 
   const showProduct = (element) => {
     lastScroll = window.scrollY;
