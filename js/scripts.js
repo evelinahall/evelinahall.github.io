@@ -1,6 +1,8 @@
 document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
 
-const DISCLAIMER = 'Tavlorna säljs utan moms och köpet görs direkt av konstnären (Evelina Häll). Försäljningen av tavlor sker inte genom bolaget Uttrycksfull AB.';
+const company = window.location.hostname.includes('uttrycksfull') ? 'Uttrycksfull' : 'Evelina Häll';
+
+const DISCLAIMER = 'Tavlorna säljs utan moms och köpet görs direkt av konstnären (Evelina Häll).' + (window.location.hostname.includes('uttrycksfull') ? ' Försäljningen av tavlor sker inte genom bolaget Uttrycksfull AB.' : '');
 
 const getUserId = () => {
   let userId = window.localStorage.getItem('userId');
@@ -139,17 +141,17 @@ const init = () => {
           buyProductEmail.href = 'mailto:'+emailAddress+'?subject=Köpförfrågan '+title;
           buyProductEmail.innerText = emailAddress;
           show(buyDialog);
-          window.document.title = 'Uttrycksfull - Konst - '+title+ ' - Köp';
+          window.document.title = company + ' - Konst - '+title+ ' - Köp';
         } else {
           const index = parseInt(parts[1]) - 1;
           show(showImageDialog);
           document.body.classList.add('overflow-hidden');
           showImageEl.src = imageElements[index].src.replace('_small', '_large');
           window.scrollTo(0, 0);
-          window.document.title = 'Uttrycksfull - Konst - '+title+ ' - '+parts[1];
+          window.document.title = company + ' - Konst - '+title+ ' - '+parts[1];
         }
       } else {
-        window.document.title = 'Uttrycksfull - Konst - '+title;
+        window.document.title = company + ' - Konst - '+title;
       }
       window.scrollTo(0,0);
     } else {
@@ -158,7 +160,7 @@ const init = () => {
       hide(productShow);
       hide(showImageDialog);
       hide(buyDialog);
-      window.document.title = 'Uttrycksfull - Konst';
+      window.document.title = company + ' - Konst';
 
       if (parts.length == 1) {
         if (parts[0] == 'lf') {
