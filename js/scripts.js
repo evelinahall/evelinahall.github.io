@@ -39,6 +39,8 @@ const init = () => {
   const img9 = document.getElementById("img9");
   const price = document.getElementById("price");
   const description = document.getElementById("description");
+  const display_vaxjo = document.getElementById("display_växjö");
+  const display_norrgavel = document.getElementById("display_norrgavel");
   const disclaimer = document.getElementById("disclaimer");
   const buyDisclaimer = document.getElementById("product_buy_disclaimer");
   const artText = document.getElementById("artText");
@@ -113,6 +115,7 @@ const init = () => {
       const name = attr.name;
       const images = parseInt(attr.images);
       const isSold = attr.sold === 'true';
+      const onDisplay = attr.display;
 
       productTitle.innerText = title;
       for (let i = 0; i < 9; i++) {
@@ -120,9 +123,20 @@ const init = () => {
       }
       price.innerText = attr.price + (attr.price.endsWith('kr/st') ? '' : ' kr');
       artText.innerHTML = attr.arttext || '';
-      description.innerText = attr.description;
+      description.innerText = attr.description + '. ';
       disclaimer.innerText = DISCLAIMER;
       buyDisclaimer.innerText = DISCLAIMER;
+
+      if (onDisplay === 'växjö') {
+        show(display_vaxjo);
+        hide(display_norrgavel);
+      } else if (onDisplay === 'norrgavel') {
+        hide(display_vaxjo);
+        show(display_norrgavel);
+      } else {
+        hide(display_vaxjo);
+        hide(display_norrgavel);
+      }
 
       hide(showImageDialog);
       hide(buyDialog);
