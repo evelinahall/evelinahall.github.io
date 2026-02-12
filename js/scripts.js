@@ -121,7 +121,7 @@ const init = () => {
       for (let i = 0; i < 9; i++) {
         setSrc(imageElements[i], images >= (i+1) ? '/img/'+name+'/'+(i+1)+'_small.jpg' : '');
       }
-      price.innerText = attr.price + (attr.price.endsWith('kr/st') ? '' : ' kr');
+      price.innerText = attr.price + (attr.price.includes('kr') ? '' : ' kr');
       artText.innerHTML = attr.arttext || '';
       description.innerText = attr.description + '. ';
       disclaimer.innerText = DISCLAIMER;
