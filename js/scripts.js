@@ -218,6 +218,7 @@ const init = () => {
       }
       if (window.clarity) {
         window.clarity("set", "content", "page_path", window.location.hash);
+        window.clarity("set", "content", "page_title", window.document.title);
       }
     }
   };
