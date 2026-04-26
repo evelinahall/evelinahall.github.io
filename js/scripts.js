@@ -209,11 +209,16 @@ const init = () => {
     }
     updateUi();
 
-    if (gtag && window.location.hostname.includes('.se')) {
-      gtag('event', 'page_view', {
-        page_title: window.document.title,
-        page_location: window.location.href
-      });
+    if (window.location.hostname.includes('.se')) {
+      if (gtag) {
+        gtag('event', 'page_view', {
+          page_title: window.document.title,
+          page_location: window.location.href
+        });
+      }
+      if (window.clarity) {
+        window.clarity("set", "content", "page_path", window.location.hash);
+      }
     }
   };
 
