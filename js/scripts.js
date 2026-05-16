@@ -2,7 +2,7 @@ document.documentElement.className = document.documentElement.className.replace(
 
 const company = window.location.hostname.includes('uttrycksfull') ? 'Uttrycksfull' : 'Evelina Häll';
 
-const DISCLAIMER = 'Tavlorna säljs utan moms och köpet görs direkt av konstnären (Evelina Häll).' + (window.location.hostname.includes('uttrycksfull') ? ' Försäljningen av tavlor sker inte genom bolaget Uttrycksfull AB.' : '');
+const DISCLAIMER = 'Tavlorna säljs genom Uttrycksfull AB (559440-2520) och priset inkluderar 12% moms.';
 
 const getUserId = () => {
   let userId = window.localStorage.getItem('userId');
