@@ -42,6 +42,7 @@ const init = () => {
   const display_vaxjo = document.getElementById("display_växjö");
   const display_norrgavel = document.getElementById("display_norrgavel");
   const display_sodersblommor = document.getElementById("display_sodersblommor");
+  const display_stenhallen = document.getElementById("display_stenhallen");
   const disclaimer = document.getElementById("disclaimer");
   const buyDisclaimer = document.getElementById("product_buy_disclaimer");
   const artText = document.getElementById("artText");
@@ -132,18 +133,27 @@ const init = () => {
         show(display_vaxjo);
         hide(display_norrgavel);
         hide(display_sodersblommor);
+        hide(display_stenhallen);
       } else if (onDisplay === 'norrgavel') {
         hide(display_vaxjo);
         show(display_norrgavel);
         hide(display_sodersblommor);
+        hide(display_stenhallen);  
       } else if (onDisplay === 'sodersblommor') {
         hide(display_vaxjo);
         hide(display_norrgavel);
         show(display_sodersblommor);
+        hide(display_stenhallen);
+      } else if (onDisplay === 'stenhallen') {
+        hide(display_vaxjo);
+        hide(display_norrgavel);
+        hide(display_sodersblommor);
+        show(display_stenhallen);
       } else {
         hide(display_vaxjo);
         hide(display_norrgavel);
         hide(display_sodersblommor);
+        hide(display_stenhallen);
       }
 
       hide(showImageDialog);
