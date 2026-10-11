@@ -97,7 +97,7 @@ const buyButtonClick = () => {
       const left = element.children[0].children[0].cloneNode(true);
       const right = element.children[0].children[1].cloneNode(true);
 
-      const buyButton = right.querySelector("#buy_button");
+      const buyButton = right.querySelector(".buy_button");
       buyButton.onclick = buyButtonClick;
 
 
