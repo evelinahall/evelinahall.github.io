@@ -2,8 +2,6 @@ document.documentElement.className = document.documentElement.className.replace(
 
 const company = window.location.hostname.includes('uttrycksfull') ? 'Uttrycksfull' : 'Evelina Häll';
 
-const DISCLAIMER = 'Tavlorna säljs genom Uttrycksfull AB (559440-2520) och priset inkluderar 12% moms.';
-
 const getUserId = () => {
   let userId = window.localStorage.getItem('userId');
   if (!userId) {
@@ -28,15 +26,6 @@ const init = () => {
   const page = document.getElementById('MainContent');
   const list = document.getElementById('product_list');
   const productTitle = document.getElementById("productTitle");
-  const mainImage = document.getElementById("mainImage");
-  const img2 = document.getElementById("img2");
-  const img3 = document.getElementById("img3");
-  const img4 = document.getElementById("img4");
-  const img5 = document.getElementById("img5");
-  const img6 = document.getElementById("img6");
-  const img7 = document.getElementById("img7");
-  const img8 = document.getElementById("img8");
-  const img9 = document.getElementById("img9");
   const price = document.getElementById("price");
   const description = document.getElementById("description");
   const display_vaxjo = document.getElementById("display_växjö");
@@ -48,11 +37,9 @@ const init = () => {
   const artText = document.getElementById("artText");
   const imageShowClose = document.getElementById("image_show_close");
   const buyDialog = document.getElementById("product_buy");
-  const buyButton = document.getElementById("buy_button");
   const closeBuyButton = document.getElementById("close_buy_button");
   const buyProductName = document.getElementById("product_buy_product_name");
   const buyProductEmail = document.getElementById("product_buy_email");
-  const imageElements = [mainImage, img2, img3, img4, img5, img6, img7, img8, img9];
 
   const productById = {};
 
@@ -62,30 +49,16 @@ const init = () => {
     if (!product.attributes.name) {
       return;
     }
-    product.id = product.attributes.name;
-    const div1 = document.createElement('div');
-    const div2 = document.createElement('div');
-    const img = document.createElement('img');
+
     const name = product.attributes.name.value;
-    img.src = '/img/'+name+'/1_small.jpg';
-    div1.appendChild(img);
-
-    div1.className = 'product_image';
-    div1.id=product.attributes.name+'_image';
-    div2.className = 'product_title';
-    div2.innerText = product.attributes.title.value;
-    div2.id=product.attributes.name+'_title';
-
-    product.appendChild(div1);
-    product.appendChild(div2);
 
     productById[name] = product;
   });
   
   const emailAddress = ['.com','ail', 'gm', '@','evelina.hall'].reverse().join('');
   
-  const hide = (el) => el.classList.add('hidden');
-  const show = (el) => el.classList.remove('hidden');
+  const hide = (el) => el.classList.add('hidden') && el;
+  const show = (el) => el.classList.remove('hidden') && el;
   const showLF = (el) => el.getAttribute("page") == 'lf' ? show(el) : hide(el);
   const hideLF = (el) => el.getAttribute("page") == 'lf' ? hide(el) : show(el);
 
@@ -99,6 +72,12 @@ const init = () => {
     }
   };
 
+const buyButtonClick = () => {
+    const parts = window.location.hash.split('-');
+    setUrl(parts[0]+'-buy');
+  };
+
+
   let lastScroll = -1;
 
   const updateUi = () => {
@@ -108,64 +87,41 @@ const init = () => {
 
     if (parts.length >= 1 && productById[parts[0]]) {
       hide(page);
+      while (productShow.firstChild) {
+        productShow.removeChild(productShow.firstChild);
+      }
       show(productShow);
 
       const element = productById[parts[0]];
-      const attr = Object.fromEntries(Array.from(element.attributes).map(item => [item.name, item.value]));
 
-      const title = element.children[1].innerText;
-      const name = attr.name;
-      const images = parseInt(attr.images);
-      const isSold = attr.sold === 'true';
-      const onDisplay = attr.display;
+      const left = element.children[0].children[0].cloneNode(true);
+      const right = element.children[0].children[1].cloneNode(true);
 
-      productTitle.innerText = title;
-      for (let i = 0; i < 9; i++) {
-        setSrc(imageElements[i], images >= (i+1) ? '/img/'+name+'/'+(i+1)+'_small.jpg' : '');
+      const buyButton = right.querySelector("#buy_button");
+      buyButton.onclick = buyButtonClick;
+
+
+      const mainImage = left.children[0];
+      mainImage.onclick = showImage(1);
+      const extraImages = left.querySelector('.product_extra_images');
+      if (extraImages) {
+        const images = extraImages.children;
+        for (let i = 0; i < images.length; i++) {
+          images[i].onclick = showImage(i+2);
+        }
       }
-      price.innerText = attr.price + (attr.price.includes('kr') ? '' : ' kr');
-      artText.innerHTML = attr.arttext || '';
-      description.innerText = attr.description + '. ';
-      disclaimer.innerText = DISCLAIMER;
-      buyDisclaimer.innerText = DISCLAIMER;
 
-      if (onDisplay === 'växjö') {
-        show(display_vaxjo);
-        hide(display_norrgavel);
-        hide(display_sodersblommor);
-        hide(display_stenhallen);
-      } else if (onDisplay === 'norrgavel') {
-        hide(display_vaxjo);
-        show(display_norrgavel);
-        hide(display_sodersblommor);
-        hide(display_stenhallen);  
-      } else if (onDisplay === 'sodersblommor') {
-        hide(display_vaxjo);
-        hide(display_norrgavel);
-        show(display_sodersblommor);
-        hide(display_stenhallen);
-      } else if (onDisplay === 'stenhallen') {
-        hide(display_vaxjo);
-        hide(display_norrgavel);
-        hide(display_sodersblommor);
-        show(display_stenhallen);
-      } else {
-        hide(display_vaxjo);
-        hide(display_norrgavel);
-        hide(display_sodersblommor);
-        hide(display_stenhallen);
-      }
+      const disc = disclaimer.cloneNode(true);
+      show(disc);
+      right.appendChild(disc);
+
+      productShow.appendChild(left);
+      productShow.appendChild(right);
+
+      const title = element.querySelector('.product_title').innerText;
 
       hide(showImageDialog);
       hide(buyDialog);
-
-      if (isSold) {
-        hide(buyButton);
-        productShow.classList.add('sold');
-      } else {
-        show(buyButton);
-        productShow.classList.remove('sold');
-      }
 
       if (parts.length == 2) {
         if (parts[1] === 'buy') {
@@ -175,10 +131,10 @@ const init = () => {
           show(buyDialog);
           window.document.title = company + ' - Konst - '+title+ ' - Köp';
         } else {
-          const index = parseInt(parts[1]) - 1;
+          const index = parseInt(parts[1]);
           show(showImageDialog);
           document.body.classList.add('overflow-hidden');
-          showImageEl.src = imageElements[index].src.replace('_small', '_large');
+          showImageEl.src = '/img/'+ parts[0] + '/' + index + '_large.jpg';
           window.scrollTo(0, 0);
           window.document.title = company + ' - Konst - '+title+ ' - '+parts[1];
         }
@@ -187,7 +143,6 @@ const init = () => {
       }
       window.scrollTo(0,0);
     } else {
-      imageElements.forEach(el=>el.src='');
       show(page);
       hide(productShow);
       hide(showImageDialog);
@@ -256,18 +211,9 @@ const init = () => {
 
   image_show_close.onclick = hideImage;
   showImageDialog.onclick = hideImage;
-  buyButton.onclick = () => {
-    const parts = window.location.hash.split('-');
-    setUrl(parts[0]+'-buy');
-  };
   closeBuyButton.onclick = () => {
     history.back();
   };
-
-  mainImage.onclick = showImage(1);
-  for (let i = 1; i < imageElements.length; i++) {
-    imageElements[i].onclick = showImage(i+1);
-  }
 
   const showProduct = (element) => {
     lastScroll = window.scrollY;
