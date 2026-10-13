@@ -94,12 +94,17 @@ const buyButtonClick = () => {
 
       const element = productById[parts[0]];
 
-      const left = element.children[0].children[0].cloneNode(true);
-      const right = element.children[0].children[1].cloneNode(true);
+      const product_image = element.querySelector('.product_image').cloneNode(true);
+      const product_title = element.querySelector('.product_title').cloneNode(true);
+      const product_details = element.querySelector('.product_details').cloneNode(true);
 
-      const buyButton = right.querySelector(".buy_button");
+      const left = product_image;
+      const right = document.createElement('div');
+      right.appendChild(product_title);
+      right.appendChild(product_details);
+
+      const buyButton = product_details.querySelector(".buy_button");
       buyButton.onclick = buyButtonClick;
-
 
       const mainImage = left.children[0];
       mainImage.onclick = showImage(1);
